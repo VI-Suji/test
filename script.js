@@ -5,10 +5,8 @@ const game = document.querySelector("#game");
 const scoreDisplay = document.querySelector("#score");
 const startMessage = document.querySelector("#start-message");
 const gameoverMessage = document.querySelector("#gameover-message");
-// const reader = new FileReader();
-// const data = reader.readAsText("score.txt");
-// console.log(data)
-const scoreFile = "score.txt"
+const scoreFile = "score.txt";
+const fs = require('fs');
 
 document.addEventListener("keydown", startGame, { once: true });
 
