@@ -84,8 +84,8 @@ function handleGameOver() {
 }
 
 function compareScore() {
-  let highScore = fs.readFile(scoreFile);
-  console.log(highScore);
+  // let highScore = fs.readFile(scoreFile);
+  // console.log(highScore);
 }
 
 
