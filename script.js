@@ -1,4 +1,5 @@
 // import random from Math;
+// import require from require.js
 const SPEED_SCALE = 0.00001;
 
 const game = document.querySelector("#game");
@@ -6,7 +7,7 @@ const scoreDisplay = document.querySelector("#score");
 const startMessage = document.querySelector("#start-message");
 const gameoverMessage = document.querySelector("#gameover-message");
 const scoreFile = "score.txt";
-const fs = require('fs');
+// const fs = require('fs');
 
 document.addEventListener("keydown", startGame, { once: true });
 
@@ -161,18 +162,18 @@ function getDinoRect() {
 }
 
 function setDinoLose() {
-  dino.src = "assets/dino-lose.png";
+  dino.src = "assets/maveli.png";
 }
 
 function handleRun(delta, speedScale) {
   if (isJumping) {
-    dino.src = `assets/dino-stationary.png`;
+    dino.src = `assets/maveli.png`;
     return;
   }
 
   if (currentFrameTime >= FRAME_TIME) {
     dinoFrame = (dinoFrame + 1) % DINO_FRAME_COUNT;
-    dino.src = `assets/dino-run-${dinoFrame}.png`; /* switch between images to simulate movement */
+    dino.src = `assets/maveli.png`; /* switch between images to simulate movement */
     currentFrameTime -= FRAME_TIME;
   }
   currentFrameTime += delta * speedScale;
@@ -237,8 +238,8 @@ function getCactusRects() {
 
 function createCactus() {
   const cactus = document.createElement("img");
-  const list = ["assets/cactus.png","assets/dino-run-0.png"]
-  cactus.src = list[randomizer(0,1)]
+  const list = ["assets/vamana.png","assets/flower.png","assets/sadhya.png","assets/flower_new.png"]
+  cactus.src = list[randomizer(0,3)]
   cactus.classList.add("cactus");
   setCustomProperty(cactus, "--left", 100);
   game.append(cactus); 
